@@ -35,7 +35,8 @@ class App extends Component {
                           player={this.props.player}
                           currentNote={this.props.currentNote}
                           currentNoteChange={this.props.currentNoteChange}
-                          addNoteToList={this.props.addNoteToList}/>
+                          addNoteToList={this.props.addNoteToList}
+                          isValid={this.props.isValid}/>
                   </div>
                   <div className="col-md-3">
                       <NotesHolderComponent player={this.props.player} notes={this.props.notes}/>

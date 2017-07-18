@@ -36,12 +36,21 @@ class NoteToolComponent extends Component{
             <div className="row">
                 <div className="col-md-12">
                     <div style={{textAlign: "center", marginTop: "10px"}}>
+                        { this.props.isValid
+                        ?
                         <RaisedButton
                             onClick={this.onButtonSave}
                             labelColor="#fff"
                             label="Save note"
                             backgroundColor="#a4c639"
-                        />
+                        /> :
+                            <RaisedButton
+                                disabled="true"
+                                labelColor="#fff"
+                                label="Save note"
+                                backgroundColor="#a4c639"
+                            />
+                        }
                     </div>
                 </div>
             </div>
