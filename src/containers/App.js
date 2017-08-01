@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { saySomething } from '../redux/modules/test/test-actions';
 import { updateYoutubeVideoLink, setPlayerObject, setVideoId, setValidValue } from '../redux/modules/youtube-video/youtube-video-actions';
-import { currentNoteChange, addNoteToList } from '../redux/modules/notes/note-actions';
+import { currentNoteChange, addNoteToList, deleteNoteFromList } from '../redux/modules/notes/note-actions';
 
 import Home from '../Test';
 import VideoComponent from '../components/VideoComponent';
@@ -39,7 +39,7 @@ class App extends Component {
                           isValid={this.props.isValid}/>
                   </div>
                   <div className="col-md-3">
-                      <NotesHolderComponent player={this.props.player} notes={this.props.notes}/>
+                      <NotesHolderComponent player={this.props.player} deleteNote={this.props.deleteNoteFromList} notes={this.props.notes}/>
                   </div>
               </div>
           </div>
@@ -67,7 +67,8 @@ const mapDispatchToProps = dispatch => bindActionCreators({
     addNoteToList,
     setPlayerObject,
     setVideoId,
-    setValidValue
+    setValidValue,
+    deleteNoteFromList
 }, dispatch)
 
 export default connect(

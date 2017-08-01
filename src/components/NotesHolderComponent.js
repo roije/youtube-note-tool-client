@@ -16,7 +16,7 @@ class NotesHolderComponent extends Component{
         return(
             <Paper id="notes-holder-component" zDepth={1}>
                 <NotesHolderHeaderComponent/>
-                <NoteListComponent player={this.props.player} notes={this.props.notes}/>
+                <NoteListComponent deleteNote={this.props.deleteNote} player={this.props.player} notes={this.props.notes}/>
             </Paper>
         )
     }

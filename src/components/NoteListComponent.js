@@ -9,7 +9,11 @@ const NoteListComponent = props => {
     return(
         <div>
             {props.notes.map((note, index) =>
-                <NoteListElementComponent player={props.player} note={note} key={index}/>
+                <NoteListElementComponent deleteNote={props.deleteNote}
+                                          player={props.player}
+                                          note={note}
+                                          key={index}
+                                          index={index}/>
             )}
         </div>
     )

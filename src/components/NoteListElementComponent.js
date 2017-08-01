@@ -10,6 +10,8 @@ class NoteListElementComponent extends Component{
 
         this.secondsToHMS = this.secondsToHMS.bind(this);
         this.goToTimeInVideo = this.goToTimeInVideo.bind(this);
+        this.deleteNote = this.deleteNote.bind(this);
+
     }
 
     secondsToHMS(seconds){
@@ -21,6 +23,11 @@ class NoteListElementComponent extends Component{
     goToTimeInVideo() {
         this.props.player.seekTo(this.props.note.time)
     }
+
+    deleteNote() {
+        this.props.deleteNote(this.props.index)
+    }
+
 
     render(){
         return(
@@ -38,7 +45,7 @@ class NoteListElementComponent extends Component{
                                 <span style={{marginLeft: "10px", paddingTop: "2px"}} className="glyphicon glyphicon-file"></span>
                             </div>
                             <div className="col-md-2">
-                                <span style={{paddingTop: "2px"}} className="glyphicon glyphicon-trash"></span>
+                                <span onClick={this.deleteNote} style={{paddingTop: "2px"}} className="glyphicon glyphicon-trash"></span>
                             </div>
                         </div>
                     </div>
